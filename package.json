@@ -4,6 +4,7 @@
   "license": "ISC",
   "author": "",
   "scripts": {
+    "create-dmz-net": "docker network create --driver bridge --attachable dmz",
     "format-caddyfile": "cd configs/caddy && ls Caddyfile* | xargs -L 1 docker run --rm -v .:/configs -w /configs caddy:2 caddy fmt --overwrite",
     "prepare": "husky install"
   },
