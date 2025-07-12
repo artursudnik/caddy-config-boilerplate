@@ -1,0 +1,15 @@
+www.example.com:80 {
+	reverse_proxy webserver:80
+	log {
+		output file /logs/access.log
+		format json
+	}
+}
+
+:80 {
+	respond "Forbidden" 403
+	log {
+		output file /logs/access-unknown-hosts.log
+		format json
+	}
+}
